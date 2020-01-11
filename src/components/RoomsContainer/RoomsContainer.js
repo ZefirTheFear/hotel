@@ -6,11 +6,10 @@ import { RoomContext } from "../../context";
 
 const RoomsContainer = () => {
   const roomContext = useContext(RoomContext);
-  console.log(roomContext);
 
   return (
     <>
-      <RoomsFilter rooms={roomContext.rooms} />
+      <RoomsFilter />
       <RoomsList rooms={roomContext.sortedRooms} />
     </>
   );

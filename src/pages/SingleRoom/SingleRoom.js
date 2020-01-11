@@ -1,16 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Hero from "../../components/Hero/Hero";
 import Banner from "../../components/Banner/Banner";
-import { RoomContext } from "../../context";
 
+import rooms from "../../data";
 import "./SingleRoom.scss";
 
 const SingleRoom = props => {
-  const roomContext = useContext(RoomContext);
+  const room = rooms.find(room => room.urlName === props.match.params.room);
 
-  const room = roomContext.rooms.find(room => room.urlName === props.match.params.room);
   if (!room) {
     return (
       <div className="error">
@@ -21,6 +20,7 @@ const SingleRoom = props => {
       </div>
     );
   }
+
   return (
     <>
       <Hero className="singleRoomHero" imgUrl={room.images[0]}>
