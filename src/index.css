@@ -16,7 +16,6 @@
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* globals */
 body {
   padding-top: 66px;
   color: var(--mainBlack);
@@ -70,11 +69,3 @@ h6 {
   background: transparent;
   color: var(--primaryColor);
 }
-.empty-search {
-  text-align: center;
-  text-transform: capitalize;
-  margin: 2rem 0;
-  padding: 1rem;
-  letter-spacing: var(--mainSpacing);
-}
-/* end of globals */
