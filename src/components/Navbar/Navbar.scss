@@ -10,6 +10,10 @@
 .nav__header {
   display: flex;
   justify-content: space-between;
+
+  .nav__header-img {
+    width: 100px;
+  }
 }
 .nav__btn {
   background: transparent;

@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="nav__center">
         <div className="nav__header">
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className="nav__header-img" />
           </Link>
           <button type="button" className="nav__btn" onClick={toggleNav}>
             <FaAlignRight className="nav__icon" />

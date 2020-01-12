@@ -43,8 +43,8 @@ const SingleRoom = props => {
           </article>
           <article className="single-room__info">
             <h3>info</h3>
-            <h6>price : ${room.price}</h6>
-            <h6>size : {room.size} SQFT</h6>
+            <h6>price : {room.price}$</h6>
+            <h6>size : {room.size}m²</h6>
             <h6>
               max capacity :
               {room.capacity > 1 ? `${room.capacity} people` : `${room.capacity} person`}

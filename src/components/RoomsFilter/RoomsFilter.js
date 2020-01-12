@@ -14,7 +14,7 @@ const RoomsFilter = () => {
 
   useEffect(() => {
     if (compDidMount.current) {
-      roomContext.setSortedRooms(fitlerRooms());
+      fitlerRooms();
     }
     compDidMount.current = true;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,7 +55,7 @@ const RoomsFilter = () => {
     if (roomContext.pets) {
       tempRooms = tempRooms.filter(room => room.pets === true);
     }
-    return tempRooms;
+    roomContext.setSortedRooms(tempRooms);
   };
 
   const getUnique = (items, value) => {
@@ -89,7 +89,7 @@ const RoomsFilter = () => {
         {/* end of select type */}
         {/* guests  */}
         <div className="roomsfilter__form-group">
-          <label>Guests</label>
+          <label>max guests</label>
           <select
             name="capacity"
             onChange={handleChange}
@@ -106,13 +106,12 @@ const RoomsFilter = () => {
         {/* end of guests */}
         {/* room price */}
         <div className="roomsfilter__form-group">
-          <label htmlFor="price">room price ${roomContext.price}</label>
+          <label>room price 0-{roomContext.price}$</label>
           <input
             type="range"
             name="price"
             min="0"
             max={roomContext.maxPrice}
-            id="price"
             value={roomContext.price}
             onChange={handleChange}
             className="roomsfilter__form-control"
@@ -121,40 +120,39 @@ const RoomsFilter = () => {
         {/* end of room price*/}
         {/* size */}
         <div className="roomsfilter__form-group">
-          <label htmlFor="price">room size </label>
-          <div className="size-inputs">
+          <label>room size </label>
+          <div className="roomsfilter__size-inputs">
             <input
               type="number"
               name="minSize"
               value={roomContext.minSize}
               onChange={handleChange}
-              className="size-input"
+              className="roomsfilter__size-input"
             />
             <input
               type="number"
               name="maxSize"
               value={roomContext.maxSize}
               onChange={handleChange}
-              className="size-input"
+              className="roomsfilter__size-input"
             />
           </div>
         </div>
         {/* end of select type */}
         {/* extras */}
         <div className="roomsfilter__form-group">
-          <div className="single-extra">
+          <div className="roomsfilter__single-extra">
             <input
               type="checkbox"
               name="breakfast"
-              id="breakfast"
               checked={roomContext.breakfast}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">breakfast</label>
+            <label>breakfast</label>
           </div>
-          <div className="single-extra">
+          <div className="roomsfilter__single-extra">
             <input type="checkbox" name="pets" checked={roomContext.pets} onChange={handleChange} />
-            <label htmlFor="breakfast">pets</label>
+            <label>pets</label>
           </div>
         </div>
         {/* end of extras type */}

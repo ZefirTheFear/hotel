@@ -22,17 +22,17 @@
   background: transparent;
   font-size: 1rem;
 }
-.size-inputs {
+.roomsfilter__size-inputs {
   display: flex;
 }
-.size-input {
+.roomsfilter__size-input {
   width: 40%;
   padding: 0.2rem;
   border: 1px solid var(--mainBlack);
   border-radius: 0.3rem;
   margin-right: 0.3rem;
 }
-.single-extra label {
+.roomsfilter__single-extra label {
   display: inline-block;
   font-size: 0.8rem;
   margin-left: 0.5rem;
